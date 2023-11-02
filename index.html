@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Animation</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+  }
+
+  .gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #025D8C 0%, #027F91 100%);
+    background-size: 300% 300%;
+    animation: moveGradient 10s ease infinite;
+  }
+
+  @keyframes moveGradient {
+    0% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="gradient-background"></div>
+<svg width="1026" height="1026" viewBox="0 0 1026 1026" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="redirectToSite()">
+<path d="M528.862 1025.99H497.058C496.134 1025.87 ... H286.823Z" fill="white"/>
+</svg>
+<script>
+  function redirectToSite() {
+    window.location.href = "https://www.dominickvargas.com";
+  }
+
+  // If you want the entire page clickable, not just the SVG:
+  document.addEventListener('click', redirectToSite);
+</script>
+</body>
+</html>
