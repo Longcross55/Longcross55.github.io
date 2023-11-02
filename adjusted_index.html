@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Animation</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background: black; /* Black background for the whole page */
+    overflow: hidden; /* Hide scrollbars if the content is bigger than the screen */
+  }
+
+  /* Full page container to handle the click */
+  .clickable-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer; /* Change cursor to the click pointer */
+  }
+
+  .gradient-background {
+    position: absolute;
+    bottom: 0; /* Start the gradient from the bottom */
+    left: 0;
+    width: 100%;
+    height: 25%; /* Gradient covers 25% of the height from the bottom */
+    background: linear-gradient(180deg, transparent, #025D8C 50%, #027F91 100%);
+    background-size: 100% 400%;
+    animation: moveGradient 10s ease infinite;
+  }
+
+  /* Ensure the SVG is visible over the gradient */
+  svg {
+    position: relative;
+    z-index: 10;
+  }
+
+  @keyframes moveGradient {
+    0% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="clickable-container" onclick="redirectToSite()">
+  <div class="gradient-background"></div>
+  <!-- SVG goes here -->
+  <svg width="1026" height="1026" viewBox="0 0 1026 1026" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M528.862 1025.99H497.058C496.134 1025.87 ... H286.823Z" fill="white"/>
+  </svg>
+</div>
+<script>
+  function redirectToSite() {
+    window.location.href = "https://www.dominickvargas.com";
+  }
+</script>
+</body>
+</html>
